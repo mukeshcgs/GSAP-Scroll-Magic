@@ -37,11 +37,10 @@ $(".project").each(function () {
 
 	animateIn
 		.fromTo($overlay, 2, { scale: 1.5, skewX: 30 }, { skewX: 0, xPercent: 100, transformOrigin: "0% 100%", ease: Power4.easeOut })
-		.from($projectInfo, 1, { scaleY: 0, transformOrigin: "bottom left" }, "-=0.5")
-		.from($smallTitle, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut })
-		.from($projectLink, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut })
-		.from($h5, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut })
-	console.log(this);
+		.from($projectInfo, 0.5, { scaleY: 0, transformOrigin: "bottom left" }, "-=1.5")
+		.from($h5, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, "-=0.2")
+		.from($smallTitle, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, "-=0.5")
+		.from($projectLink, 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, "-=0.3")
 
 	//make a scrollmagic scene
 	var scene = new ScrollMagic.Scene({

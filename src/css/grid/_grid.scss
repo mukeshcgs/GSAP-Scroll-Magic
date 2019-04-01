@@ -1,0 +1,42 @@
+.my-container {
+    background: #f6d402;
+}
+
+.my-grid-9 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column: 1/span 9;
+}
+
+.my-box {
+    width: 100%;
+    background: #05c496;
+    grid-column: 4/span 5;
+    grid-row: 1/span 5;
+    @media only screen and (max-width: 420px){
+        grid-column: 1/12;
+    }
+}
+
+.my-box-info {
+    width: 100%;
+    background: #c226da;
+    grid-column: 2/span 4;
+    grid-row: 2/span 3;
+    @media only screen and (max-width: 420px){
+        grid-column: 2/9;
+        grid-row: 4/span 3;
+    }
+}
+
+.c1 {
+    background: #3eabff;
+}
+
+.c2 {
+    background: #b266ff;
+}
+
+.c3 {
+    background: #ff5a9b;
+}
