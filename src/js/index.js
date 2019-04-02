@@ -16,15 +16,25 @@ import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 import 'animation.gsap';
 import 'debug.addIndicators';
 
-
 var winW = window.innerWidth;
 var winH = window.innerHeight;
 
 var controller = new ScrollMagic.Controller();
 
-//Code
+// TEXT animatation Code
 $(document).ready(function () {
+	var tl = new TimelineMax({ paused: true })
+	tl
+		.to('.anim-btn', 1.5, { opacity: 0 })
+		.to('.intro-sec', 1.5, { opacity: 0 })
+		.staggerFrom('.hidden-text', 1.5, { y: "100%", ease: Power4.easeOut }, 0.15)
+
+	document.querySelector('button').addEventListener("click", letsAnimate)
+	function letsAnimate() {
+		tl.play();
+	}
 });
+
 // init controller
 $(".project").each(function () {
 	var $overlay = $(this).find(".overlay"),
@@ -47,7 +57,5 @@ $(".project").each(function () {
 		triggerElement: this,
 	}).addIndicators().setTween(animateIn).addTo(controller)
 })
-
-
 
 console.log("%cMade with ❤︎️ by Mukesh — Designer by profession, an artist by passion. — mukeshthankar.com", "background:#000;color:#fff;padding:0.5em 1em;line-height:2;");
