@@ -16,8 +16,7 @@ module.exports = {
   },
   mode: "development",
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
@@ -58,8 +57,6 @@ module.exports = {
       //     }
       //   }]
       // }
-
-
     ]
   },
   resolve: {
@@ -92,7 +89,11 @@ module.exports = {
       template: '!html-webpack-plugin/lib/loader!src/index.html',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin({ filename: 'styles.css', disable: false, allChunks: true }),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      disable: false,
+      allChunks: true
+    }),
     new BrowserSyncPlugin(
       // BrowserSync options
       {
